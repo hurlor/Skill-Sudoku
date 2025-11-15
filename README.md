@@ -18,7 +18,7 @@
 - 在项目目录中运行 npm install 安装依赖
 - 运行 npm start 启动服务器
 - 在浏览器中本地访问 http://localhost:3000
-- 或远程访问
+- 或远程访问(记得在防火墙等放通端口)http://ip:3000
 <img width="861" height="559" alt="image" src="https://github.com/user-attachments/assets/b995dae4-8401-4533-b5b6-65dcaa8d556d" />
 <img width="819" height="1021" alt="image" src="https://github.com/user-attachments/assets/ad758b5c-9839-4b55-a7fe-17239399212d" />
 飞沙走石：随机遮蔽对手5个格子
