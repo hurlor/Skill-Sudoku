@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技能数独，好好玩</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>技能数独，好好玩</h1>
+        </header>
+        
+        <main>
+            <!-- 开始界面 -->
+            <div id="start-screen" class="screen active">
+                <div class="menu">
+                    <h2>选择游戏模式</h2>
+                    <div class="difficulty-buttons">
+                        <button id="easy-btn">简单</button>
+                        <button id="normal-btn">普通</button>
+                        <button id="hard-btn">困难</button>
+                    </div>
+                    <div class="game-mode-buttons">
+                        <button id="single-player-btn">单人游戏</button>
+                        <button id="multiplayer-btn">联机对战</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 游戏界面 -->
+            <div id="game-screen" class="screen">
+                <div class="game-info">
+                    <div class="lives">
+                        <span>生命值: </span>
+                        <div id="lives-container">
+                            <span class="life">❤️</span>
+                            <span class="life">❤️</span>
+                            <span class="life">❤️</span>
+                            <span class="life">❤️</span>
+                            <span class="life">❤️</span>
+                        </div>
+                    </div>
+                    <div class="timer">
+                        <span>时间: </span>
+                        <span id="timer">00:00</span>
+                    </div>
+                    <div id="opponent-info" class="opponent-info hidden">
+                        <span>对手进度: </span>
+                        <div id="opponent-progress">
+                            <div id="opponent-progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-controls">
+                    <button id="note-mode-btn">笔记模式</button>
+                    <div class="skills-container multiplayer-only hidden">
+                        <button id="skill-obscure-btn" class="skill-button">飞沙走石</button>
+                        <button id="skill-eraser-btn" class="skill-button">橡皮擦</button>
+                        <button id="skill-blackjack-btn" class="skill-button">决战21点</button>
+                    </div>
+                    <button id="back-btn">返回菜单</button>
+                </div>
+                
+                <div class="sudoku-board">
+                    <div id="sudoku-grid"></div>
+                </div>
+                
+                <div class="number-pad">
+                    <button class="number-btn" data-number="1">1</button>
+                    <button class="number-btn" data-number="2">2</button>
+                    <button class="number-btn" data-number="3">3</button>
+                    <button class="number-btn" data-number="4">4</button>
+                    <button class="number-btn" data-number="5">5</button>
+                    <button class="number-btn" data-number="6">6</button>
+                    <button class="number-btn" data-number="7">7</button>
+                    <button class="number-btn" data-number="8">8</button>
+                    <button class="number-btn" data-number="9">9</button>
+                    <button id="erase-btn">擦除</button>
+                </div>
+            </div>
+            
+            <!-- 游戏结束界面 -->
+            <div id="game-over-screen" class="screen">
+                <div class="result">
+                    <h2 id="result-title">游戏结束</h2>
+                    <p id="result-message"></p>
+                    <p id="result-time"></p>
+                    <div id="rematch-status"></div>
+                    <button id="restart-btn" class="single-player-only">重新开始</button>
+                    <button id="rematch-btn" class="hidden">再来一局</button>
+                    <button id="menu-btn">返回菜单</button>
+                </div>
+            </div>
+            
+            <!-- 联机等待界面 -->
+            <div id="waiting-screen" class="screen">
+                <div class="waiting-content">
+                    <h2>等待对手加入...</h2>
+                    <div class="room-info">
+                        <p>房间号: <span id="room-id"></span></p>
+                        <p>分享此房间号给朋友加入游戏</p>
+                    </div>
+                    <button id="cancel-waiting-btn">取消等待</button>
+                </div>
+            </div>
+            
+            <!-- 加入房间界面 -->
+            <div id="join-room-screen" class="screen">
+                <div class="join-room-content">
+                    <h2>加入房间</h2>
+                    <input type="text" id="room-code-input" placeholder="输入房间号">
+                    <button id="join-room-btn">加入</button>
+                    <button id="back-to-menu-btn">返回</button>
+                </div>
+            </div>
+            
+            <!-- 决战21点游戏界面 -->
+            <div id="blackjack-modal" class="modal hidden">
+                <div class="modal-content blackjack-content">
+                    <h2>决战21点</h2>
+                    <div class="blackjack-status" id="blackjack-status">等待对手响应...</div>
+                    
+                    <div class="blackjack-players">
+                        <div class="blackjack-player">
+                            <h3>你的牌</h3>
+                            <div class="cards-container" id="player-cards"></div>
+                            <div class="card-value" id="player-value">点数: 0</div>
+                            <div class="blackjack-controls" id="player-controls">
+                                <button id="hit-btn" class="blackjack-btn">要牌</button>
+                                <button id="stand-btn" class="blackjack-btn">停牌</button>
+                            </div>
+                        </div>
+                        
+                        <div class="blackjack-player">
+                            <h3>对手的牌</h3>
+                            <div class="cards-container" id="opponent-cards"></div>
+                            <div class="card-value" id="opponent-value">点数: 0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="blackjack-result" id="blackjack-result"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
