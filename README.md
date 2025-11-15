@@ -19,10 +19,10 @@
 - 运行 npm start 启动服务器
 - 在浏览器中本地访问 http://localhost:3000
 - 或远程访问(记得在防火墙等放通端口)http://ip:3000
-<img width="861" height="559" alt="image" src="https://github.com/user-attachments/assets/b995dae4-8401-4533-b5b6-65dcaa8d556d" />
-<img width="819" height="1021" alt="image" src="https://github.com/user-attachments/assets/ad758b5c-9839-4b55-a7fe-17239399212d" />
-飞沙走石：随机遮蔽对手5个格子
-<img width="821" height="917" alt="image" src="https://github.com/user-attachments/assets/92c4b2aa-a782-4ea4-8e85-24e9e582d30c" />
-橡皮擦：随机擦除对手填写正确的一个格子
-决战21点：对方接受挑战后，以21点决定数独比赛的胜负，发起者先叫牌
-<img width="906" height="1003" alt="image" src="https://github.com/user-attachments/assets/f3bc88f3-000e-4aba-bb8f-4964c39d391b" />
+- <img width="861" height="559" alt="image" src="https://github.com/user-attachments/assets/b995dae4-8401-4533-b5b6-65dcaa8d556d" />
+- <img width="819" height="1021" alt="image" src="https://github.com/user-attachments/assets/ad758b5c-9839-4b55-a7fe-17239399212d" />
+- 飞沙走石：随机遮蔽对手5个格子
+- <img width="821" height="917" alt="image" src="https://github.com/user-attachments/assets/92c4b2aa-a782-4ea4-8e85-24e9e582d30c" />
+- 橡皮擦：随机擦除对手填写正确的一个格子
+- 决战21点：对方接受挑战后，以21点决定数独比赛的胜负，发起者先叫牌
+- <img width="906" height="1003" alt="image" src="https://github.com/user-attachments/assets/f3bc88f3-000e-4aba-bb8f-4964c39d391b" />
